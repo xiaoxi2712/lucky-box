@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NAIJA GIFT CARD - LUCKY BOX</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>🎁 NAIJA GIFT CARD - LUCKY BOX</h1>
+    <p class="subtitle">Available 1/8-31/8 from 3:00 PM to 3:00 AM (Nigeria Time)</p>
+
+    <div class="grid">
+      <!-- 9 hộp quà đánh số 1 đến 9 -->
+      <!-- Mỗi box có data-index để nhận phần thưởng đúng vị trí -->
+      <!-- Mỗi box hiển thị hình hộp quà và số thứ tự -->
+      <!-- Số thứ tự nằm trong div .box-number -->
+
+      <!-- Box 1 to 9 -->
+      <!-- Dùng vòng lặp khi dùng backend, ở đây viết tay -->
+      <div class="box" data-index="0" onclick="openBox(this)">
+        <img src="1.png" alt="Gift Box">
+        <div class="box-number">1</div>
+      </div>
+      <div class="box" data-index="1" onclick="openBox(this)">
+        <img src="1.png" alt="Gift Box">
+        <div class="box-number">2</div>
+      </div>
+      <div class="box" data-index="2" onclick="openBox(this)">
+        <img src="1.png" alt="Gift Box">
+        <div class="box-number">3</div>
+      </div>
+      <div class="box" data-index="3" onclick="openBox(this)">
+        <img src="1.png" alt="Gift Box">
+        <div class="box-number">4</div>
+      </div>
+      <div class="box" data-index="4" onclick="openBox(this)">
+        <img src="1.png" alt="Gift Box">
+        <div class="box-number">5</div>
+      </div>
+      <div class="box" data-index="5" onclick="openBox(this)">
+        <img src="1.png" alt="Gift Box">
+        <div class="box-number">6</div>
+      </div>
+      <div class="box" data-index="6" onclick="openBox(this)">
+        <img src="1.png" alt="Gift Box">
+        <div class="box-number">7</div>
+      </div>
+      <div class="box" data-index="7" onclick="openBox(this)">
+        <img src="1.png" alt="Gift Box">
+        <div class="box-number">8</div>
+      </div>
+      <div class="box" data-index="8" onclick="openBox(this)">
+        <img src="1.png" alt="Gift Box">
+        <div class="box-number">9</div>
+      </div>
+    </div>
+
+    <button onclick="resetGame()">🔁 Play Again</button>
+  </div>
+ <!-- Thông báo chúc mừng -->
+  <div id="congratsMessage" class="hidden">
+    <div id="congratsContent">
+      🎉 Congratulations!<br>
+      You’ve received <span id="rewardAmount">1500₦</span>!
+    </div>
+  </div>
+  <!-- Âm thanh mở quà -->
+  <audio id="openSound" src="https://www.fesliyanstudios.com/play-mp3/387"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

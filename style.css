@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #ffecd2, #fcb69f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.box {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  background-color: transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  flex-direction: column;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+.box img {
+  width: 150px;
+  height: auto;
+}
+
+.box-number {
+  position: absolute;
+  bottom: 20px;
+  background-color: yellow(255, 255, 255, 0.966);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #0a0900;
+  pointer-events: none;
+}
+
+.box.opened {
+  background-color: #fff8c6;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  cursor: default;
+}
+
+.box.opened img {
+  display: none;
+}
+
+.box.opened .box-number {
+  position: static;
+  background: none;
+  font-size: 22px;
+  color: #000;
+  padding: 0;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background: #ff8c42;
+  border: none;
+  color: rgb(235, 222, 41);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #e6762e;
+}
+#congratsMessage {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffffdd;
+  padding: 30px 40px;
+  border-radius: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #ff8800;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  animation: bounceIn 0.6s ease;
+}
+
+#congratsMessage.hidden {
+  display: none;
+}
+
+@keyframes bounceIn {
+  0%   { transform: scale(0.8) translate(-50%, -50%); opacity: 0; }
+  60%  { transform: scale(1.2) translate(-50%, -50%); opacity: 1; }
+  100% { transform: scale(1)   translate(-50%, -50%); }
+}
